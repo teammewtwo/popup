@@ -1,7 +1,6 @@
 import React from 'react';
-
 import image from '../../Assets/covorphoto.jpg';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 
 const HeaderImage = (props) => (

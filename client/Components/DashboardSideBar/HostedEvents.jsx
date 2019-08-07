@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 
-import HostedEventModal from './HostedEventModal.jsx';
+import HostedEventModal from '../Modals/HostedEventModal.jsx';
 
 const HostedEvents = (props) => {
   function activateModal() {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
-import EventCard from './EventCard.jsx';
+import DashboardEventCard from './DashboardEventCard.jsx';
 
 const Events = (props) => {
   console.log(JSON.stringify(props.events));
@@ -16,9 +15,9 @@ const Events = (props) => {
     <div className='eventsWrapper'>
       {/* <p>hello from inside of events container</p> */}
       <h3>Events In Your Area</h3>
-      <EventCard />
-      <EventCard />
-      <EventCard />
+      <DashboardEventCard />
+      <DashboardEventCard />
+      <DashboardEventCard />
     </div>
   );
 };

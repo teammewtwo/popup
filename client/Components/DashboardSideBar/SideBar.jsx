@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 import HostedEvents from './HostedEvents.jsx';
 
 
-class Controls extends React.Component {
+class SideBar extends React.Component {
   render() {
     // const hostedEventsArr = [];
     // for (let i = 0; i < Data.length; i++) {
@@ -28,4 +28,4 @@ class Controls extends React.Component {
   }
 }
 
-export default Controls;
+export default SideBar;
