@@ -13,7 +13,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 render(
   <Provider store = { store } >
       <Router>
-      <App / >
+        <App />
       </Router>
   </Provider>,
   document.getElementById('root')
