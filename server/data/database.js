@@ -1,5 +1,7 @@
 const { Pool } = require('pg');
+//connect to pg database
 
+//client or pool ----- client only makes one connect at once
 const uri = 'postgres://whznpqqr:jnYpb12XBSAxEFih-y0TiPFpBCV-NIUu@raja.db.elephantsql.com:5432/whznpqqr';
 
 /**
@@ -56,6 +58,7 @@ pool
  */
 
 module.exports = {
+  //we can find where the error is within the query rather than going into pool
   query: (queryObj) => pool.query(queryObj),
   getClient: (callback) => {
     pool.connect((err, client, done) => {

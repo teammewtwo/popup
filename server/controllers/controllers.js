@@ -65,7 +65,6 @@ eventController.updateEvent = async (req,res, next) => {
     }
 }
 
-
 eventController.deleteEvent = async (req, res, nex) => {
     // DELETE FROM table_name WHERE  {CONDITION} --- /events/:id;
     const id = req.params.id;
@@ -98,7 +97,6 @@ eventController.deleteEvent = async (req, res, nex) => {
         })
     }
 };
-
 
 eventController.findAllEvents = async (req, res, next) => {
     // SELECT * FROM

@@ -1,7 +1,6 @@
 /* eslint-disable arrow-parens */
 /* eslint-disable import/prefer-default-export */
 import * as types from '../constants/actionTypes.js'
-import { userInfo } from 'os';
 
 
 export const showModal = (modalType) => ({

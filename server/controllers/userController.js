@@ -21,7 +21,7 @@ const userController = {
       // generate the hashed password so we can store that in the database
       const salt = bcrypt.genSaltSync(SALT_WORK_FACTOR);
       const hashedPass = bcrypt.hashSync(password, salt);
-
+//returning star means if insert was sucessful it returns what it inserted
       const query = {
         text: 'INSERT INTO users(first_name, last_name, email, password, role) VALUES($1, $2, $3, $4, $5) RETURNING *',
         values: [firstName, lastName, email, hashedPass, 'user'],

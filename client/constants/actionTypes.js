@@ -32,13 +32,4 @@ export const CREATE_NEW_USER = 'CREATE_NEW_USER';
 // export const SET_ATTENDEES = 'SET_ATTENDEES';
 // export const SET_CUISINETYPE = 'SET_CUISINETYPE';
 export const GET_EVENTS = 'GET_EVENTS';
-// export const
-// export const
-// export const
-// export const
-// export const
-// export const
-// export const
-// export const
-// export const
-// export const
+
