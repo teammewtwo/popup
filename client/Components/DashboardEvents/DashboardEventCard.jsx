@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Button, CardTitle, CardText, CardSubtitle } from 'reactstrap';
-import { ButtonGroup } from 'reactstrap';
+import { ButtonGroup } from 'reactstrap'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-const EventCard = (props) => {
+const DashboardEventCard = (props) => {
   console.log(props);
   return (
     <div>
@@ -29,4 +29,4 @@ const EventCard = (props) => {
   );
 };
 
-export default EventCard;
+export default DashboardEventCard;
