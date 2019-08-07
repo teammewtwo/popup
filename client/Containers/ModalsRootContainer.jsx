@@ -1,10 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+<<<<<<< HEAD:client/LandingPage/Wrappers/ModalsRootContainer.jsx
 import * as actions from '../../actions/actions'
 import SignUpModal from '../Components/SignUpModal.jsx'
 import CreateEventModal from '../Components/CreateEventModal.jsx'
 import { CREATE_EVENT_MODAL, SIGN_UP_MODAL } from '../../constants/modaltypes.js';
 import store from '../../store.js';
+=======
+import * as actions from '../actions/actions'
+import SignUpModal from '../Components/Modals/SignUpModal.jsx'
+import CreateEventModal from '../Components/Modals/CreateEventModal.jsx'
+import { CREATE_EVENT_MODAL, SIGN_UP_MODAL }from '../constants/modaltypes';
+import store from '../store';
+>>>>>>> 4e04f901ee6513f9e6020947241964d5109f45de:client/Containers/ModalsRootContainer.jsx
 /* This is how I routed the modals to the redux store. This 
 container checks the redux store to see if there is a modal to render. 
 Look at the modal type constants to see how this page works */

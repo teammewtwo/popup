@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import NavBar from '../Components/NavBar.jsx'
+import NavBar from '../Components/NavBar/NavBar.jsx';
 
 
 const NavBarContainer = (props) => (
