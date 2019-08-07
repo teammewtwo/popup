@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarContainer from './NavBarContainer.jsx'
 import HeaderImage from '../Components/LandingPageCoverPhoto/HeaderImage.jsx';
-import CardContainter from '../Components/LandingPageCoverPhoto/HeaderImage.jsx';
+import LandingPageCardContainter from './LandingPageCardContainer.jsx';
 import { connect } from 'react-redux';
 /* Bring in Specific Actions */
 import { showModal } from '../actions/actions'
@@ -28,7 +28,7 @@ export class LandingPageContainer extends React.Component {
       <div>
       <NavBarContainer showLoginMenu={this.showLoginMenu}/>
       <HeaderImage showCreateEventBox={this.showCreateEventBox}/>
-      <CardContainter />
+      <LandingPageCardContainter />
     </div>
     );
   }
