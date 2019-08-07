@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'; // React Router
 import { connect } from 'react-redux';
 // REQUIRED FOR ASYNC/AWAIT BUT NOT LISTED IN PACKAGE.JSON
 // import "core-js/stable";
 // import "regenerator-runtime/runtime";
-
-import ControlPanel from './controlComponents/Controls.jsx';
-import Events from './eventComponents/Events.jsx';
+import SideBar from '../Components/DashboardSideBar/SideBar.jsx';
+import Events from '../Components/DashboardEvents/Events.jsx';
 import  {getEvents} from '../actions/actions';
 
 const mapStateToProps = store => ({
@@ -25,7 +24,8 @@ const getEventsAndDispatch = () => dispatch => fetch('/api/')
 const mapDispatchToProps = dispatch => ({
   loadEvents: () => dispatch(getEventsAndDispatch),
 });
-class Wrapper extends Component {
+
+class DashboardContainer extends Component {
 
   componentDidMount() {
     // async await requires core-js and regenerator runtime for the polyfill
@@ -43,11 +43,11 @@ class Wrapper extends Component {
     return(
       <div className="dashboardWrapper">
         {/* <p>hello from inside the wrapper</p> */}
-        <ControlPanel />
+        <SideBar />
         <Events events={this.props.events} />
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Wrapper);
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);
