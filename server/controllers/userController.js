@@ -14,14 +14,17 @@ const userController = {
    * @param res - HTTP Response that will contain the created user's id in its locals property
    */
   createUser: async (req, res, next) => {
+    console.log(req.body)
+    console.log("your here");
     // we require first name, last name, email, password to create user
     const { firstName, lastName, email, password } = req.body;
+    console.log(firstName, lastName, email, password);
     // verify all required information;
     if (firstName && lastName && email && password) {
       // generate the hashed password so we can store that in the database
       const salt = bcrypt.genSaltSync(SALT_WORK_FACTOR);
       const hashedPass = bcrypt.hashSync(password, salt);
-
+//returning star means if insert was sucessful it returns what it inserted
       const query = {
         text: 'INSERT INTO users(first_name, last_name, email, password, role) VALUES($1, $2, $3, $4, $5) RETURNING *',
         values: [firstName, lastName, email, hashedPass, 'user'],
