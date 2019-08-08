@@ -4,6 +4,7 @@ const eventController = {};
 
 eventController.addEvent = async (req, res, next) => {
   // required inputs to add an event
+  console.log(req.body);
   const {
     title, description, maxAttendees, host, location, cuisineType, start, end, date, price,
   } = req.body;

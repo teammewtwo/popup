@@ -25,13 +25,15 @@ const ModalRootContainer = (props) => {
   
   const SpecificModal = MODAL_COMPONENTS[props.modalType];
 
-  return <SpecificModal hideModal={props.hideModal} />;
+  return <SpecificModal createNewEvent={props.createNewEvent} createNewUser={props.createNewUser} hideModal={props.hideModal} />;
 
 };
 
 // This is where we pass in the hide modal function to dispense to our indicidual modal onclose methods. 
 const mapDispatchToProps = dispatch => ({
   hideModal: () => dispatch(actions.hideModal()),
+  createNewUser: (user) => dispatch(actions.createNewUser(user)),
+  createNewEvent: (eventData) => dispatch(actions.createNewEvent(eventData)),
 })
 // this is where we grab the modal type from the store. 
 const mapStateToProps = store => {
