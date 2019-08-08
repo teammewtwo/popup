@@ -8,19 +8,14 @@ import { showModal } from '../actions/actions'
 /** Modal Type Constant */
 import { SIGN_UP_MODAL } from '../constants/modaltypes';
 
-export class LandingPageContainer extends React.Component {
+ class LandingPageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.showLoginMenu = this.showLoginMenu.bind(this);
-    this.showCreateEventBox = this.showCreateEventBox.bind(this);
   }
 
   showLoginMenu() {
     this.props.showModal(SIGN_UP_MODAL);
-  }
-
-  showCreateEventBox() {
-    this.props.showModal(SIGN_UP_MODAL)
   }
 
   render() {

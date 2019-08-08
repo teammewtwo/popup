@@ -14,8 +14,11 @@ const userController = {
    * @param res - HTTP Response that will contain the created user's id in its locals property
    */
   createUser: async (req, res, next) => {
+    console.log(req.body)
+    console.log("your here");
     // we require first name, last name, email, password to create user
     const { firstName, lastName, email, password } = req.body;
+    console.log(firstName, lastName, email, password);
     // verify all required information;
     if (firstName && lastName && email && password) {
       // generate the hashed password so we can store that in the database
