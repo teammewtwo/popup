@@ -1,18 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-<<<<<<< HEAD:client/LandingPage/Wrappers/ModalsRootContainer.jsx
-import * as actions from '../../actions/actions'
-import SignUpModal from '../Components/SignUpModal.jsx'
-import CreateEventModal from '../Components/CreateEventModal.jsx'
-import { CREATE_EVENT_MODAL, SIGN_UP_MODAL } from '../../constants/modaltypes.js';
-import store from '../../store.js';
-=======
 import * as actions from '../actions/actions'
 import SignUpModal from '../Components/Modals/SignUpModal.jsx'
 import CreateEventModal from '../Components/Modals/CreateEventModal.jsx'
 import { CREATE_EVENT_MODAL, SIGN_UP_MODAL }from '../constants/modaltypes';
 import store from '../store';
->>>>>>> 4e04f901ee6513f9e6020947241964d5109f45de:client/Containers/ModalsRootContainer.jsx
 /* This is how I routed the modals to the redux store. This 
 container checks the redux store to see if there is a modal to render. 
 Look at the modal type constants to see how this page works */
@@ -33,13 +25,15 @@ const ModalRootContainer = (props) => {
   
   const SpecificModal = MODAL_COMPONENTS[props.modalType];
 
-  return <SpecificModal hideModal={props.hideModal} />;
+  return <SpecificModal createNewEvent={props.createNewEvent} createNewUser={props.createNewUser} hideModal={props.hideModal} />;
 
 };
 
 // This is where we pass in the hide modal function to dispense to our indicidual modal onclose methods. 
 const mapDispatchToProps = dispatch => ({
   hideModal: () => dispatch(actions.hideModal()),
+  createNewUser: (user) => dispatch(actions.createNewUser(user)),
+  createNewEvent: (eventData) => dispatch(actions.createNewEvent(eventData)),
 })
 // this is where we grab the modal type from the store. 
 const mapStateToProps = store => {

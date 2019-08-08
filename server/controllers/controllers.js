@@ -4,6 +4,7 @@ const eventController = {};
 
 eventController.addEvent = async (req, res, next) => {
   // required inputs to add an event
+  console.log(req.body);
   const {
     title, description, maxAttendees, host, location, cuisineType, start, end, date, price,
   } = req.body;
@@ -66,7 +67,6 @@ eventController.updateEvent = async (req, res, next) => {
   }
 };
 
-
 eventController.deleteEvent = async (req, res, nex) => {
   // DELETE FROM table_name WHERE  {CONDITION} --- /events/:id;
   const id = req.params.id;
@@ -98,7 +98,6 @@ eventController.deleteEvent = async (req, res, nex) => {
     });
   }
 };
-
 
 eventController.findAllEvents = async (req, res, next) => {
   // SELECT * FROM
