@@ -7,7 +7,11 @@ const EventCard = (props) => {
   return (
     <div>
       <Card id='eventcard'>
-        <CardImg top width="100%" src="https://placeimg.com/318/180/people" alt="Card image cap" />
+
+        <CardImg top width="100%" src="http://placekitten.com/318/180" alt="Card image cap" />
+
+        
+
         <CardBody>
           <CardTitle>Card title</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>

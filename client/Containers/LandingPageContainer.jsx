@@ -13,12 +13,15 @@ import { LOGIN } from '../constants/actionTypes.js';
  class LandingPageContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.loginTheUser = this.loginTheUser.bind(this);
-    this.showLoginMenu = this.showLoginMenu.bind(this);
+      this.showLoginMenu = this.showLoginMenu.bind(this);
+      this.showCreateEventBox = this.showCreateEventBox.bind(this);
+      this.loginTheUser = this.loginTheUser.bind(this);
+ 
   }
 
   showLoginMenu() {
     this.props.showModal(SIGN_UP_MODAL);
+    //currently this is a "LOG-IN modal" sign up modal needs to be created.
   }
 
   loginTheUser(username,password) { 
@@ -29,7 +32,9 @@ import { LOGIN } from '../constants/actionTypes.js';
   }
 
   showCreateEventBox() {
+
     this.props.showModal(SIGN_UP_MODAL);
+
   }
 
   render() {

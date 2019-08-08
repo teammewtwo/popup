@@ -14,6 +14,7 @@ const mapDispatchToProps = dispatch => ({
 //   this.props.login()
 // }
 const NavBarContainer = (props) => (
+  //change classname to navBar.
   <div className='allcards'>
    <NavBar loginTheUser={props.login} showLoginMenu={props.showLoginMenu} />
   </div>
