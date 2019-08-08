@@ -12,9 +12,10 @@
   border-style: solid;
   background-color: rgb(87, 105, 105); 
 }
-.login {
+.signup {
   border-style: solid;
 }
+
 #login {
   position: relative;
  }
@@ -60,12 +61,10 @@
 
 .modal-content-div {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 50%;
+  top: 25%;
+  width: 350px;
   height: 50%;
-  left: 0;
+  left: 50%;
   z-index: 10000;
   overflow: auto;
   text-align: center;

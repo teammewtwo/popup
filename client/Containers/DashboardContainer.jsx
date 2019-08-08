@@ -4,8 +4,11 @@ import { connect } from 'react-redux';
 // // REQUIRED FOR ASYNC/AWAIT BUT NOT LISTED IN PACKAGE.JSON
 // import "core-js/stable";
 // import "regenerator-runtime/runtime";
+import { showModal } from '../actions/actions';
 import SideBar from '../Components/DashboardSideBar/SideBar.jsx';
 import Events from '../Components/DashboardEvents/Events.jsx';
+import { CREATE_EVENT_MODAL } from '../constants/modaltypes'
+import  {getEvents} from '../actions/actions';
 import  {getEvents, getEventsAndDispatch} from '../actions/actions';
 
 const mapStateToProps = store => ({
@@ -20,10 +23,20 @@ const mapStateToProps = store => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  loadEvents: () => dispatch(getEventsAndDispatch()),
+  loadEvents: () => dispatch(getEventsAndDispatch),
+  showModal: modelType => dispatch(showModal(modelType)),
 });
 
 class DashboardContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.showCreateEventBox = this.showCreateEventBox.bind(this);
+  }
+
+  showCreateEventBox() {
+    this.props.showModal(CREATE_EVENT_MODAL);
+  }
+
   componentDidMount() {
     // async await requires core-js and regenerator runtime for the polyfill
     // CURRENTLY NOT WORKING, TRY THE COMMENTED OUT DEFINITON OF GETEVENTSANDDISPATCH
@@ -49,8 +62,8 @@ class DashboardContainer extends Component {
       <div className="dashboardWrapper">
       
         {/* <p>hello from inside the wrapper</p> */}
-        <SideBar />
-        <Events events={this.props.events} />
+        <SideBar createEvent={this.showCreateEventBox} />
+        <Events createEvent={this.showCreateEventBox} events={this.props.events} />
       </div>
     )
   }

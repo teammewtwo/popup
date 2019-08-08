@@ -10,12 +10,11 @@ import { login } from '../actions/actions';
 import { SIGN_UP_MODAL } from '../constants/modaltypes';
 import { LOGIN } from '../constants/actionTypes.js';
 
-export class LandingPageContainer extends React.Component {
+ class LandingPageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.loginTheUser = this.loginTheUser.bind(this);
     this.showLoginMenu = this.showLoginMenu.bind(this);
-    this.showCreateEventBox = this.showCreateEventBox.bind(this);
   }
 
   showLoginMenu() {

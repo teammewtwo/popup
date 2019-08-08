@@ -40,8 +40,8 @@ module.exports = {
     //   '/api': 'http://localhost:3000',
     // },
     proxy: [{
-      context:['/api', '/auth'],
-      target:'http://localhost:3000'
+      context: ['/api', '/auth', '/signup'],
+      target: 'http://localhost:3000',
     }],
     hot: true,
   },
