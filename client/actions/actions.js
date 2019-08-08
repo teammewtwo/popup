@@ -38,21 +38,54 @@ export const editEvent = (date, location, startTime, endTime, description, price
   payload: [date, location, startTime, endTime, description, maxAttendees, cuisineType, price, host],
 });
 
-export const login = (userName, pass) => ({
-  type: types.LOGIN,
-  payload: [userName, pass],
+export const getEvents = (events) => ({
+  type: types.GET_EVENTS,
+  payload: events,
 });
 
 export const logout = () => ({
   type: types.LOGOUT,
 });
 
-export const createNewUser = (firstName, lastName, pass, email) => ({
-  types: types.CREATE_NEW_USER,
-  payload: [firstName, lastName, email, pass],
-});
+export const createNewUser = (userData) => {
+  console.log('asdfasdfasdfasdfasdfasdfsadfasdfasdfadsfasdfadsfadsfasdfasdf', userData);
+  return (dispatch => fetch('/auth/signup', {
+    method: 'POST',
+    body: JSON.stringify(userData),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(response => {
+    console.log(response);
+    return response.json();
+  }).then(data => {
+    console.log(data);
+  }).catch(error => {
+    console.log(error);
+  }));
+};
 
-export const getEvents = (events) => ({
-  types: types.GET_EVENTS,
-  payload: events,
-});
+
+export const login = (user) => {
+  console.log("Here is the username for the attempted login: ", user);
+  return (dispatch => fetch('auth/login', {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(response => {
+    console.log(response);
+    return response.json();
+  }).then(data =>{
+    console.log(data);
+  }).catch(error => {
+    console.log(error);
+  }));
+  // router.post('/login', userController.verifyUser, cookieController.setCookie, sessionController.createSession,
+  // (req, res) => res.status(200).json(res.locals.user));
+
+  //here is the old stuff that was in this function 
+  // type: types.LOGIN,
+  // payload: [userName, pass],
+};

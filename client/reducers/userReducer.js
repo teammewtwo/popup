@@ -10,7 +10,8 @@ const initialState = {
 const userReducer = (state = initialState, action) => {
 
   switch(action.type) {
-    case types.LOGIN:
+    case types.LOGIN: 
+    console.log("hello")
       return {
         ...state,
         email: action.payload[0],
@@ -31,4 +32,4 @@ const userReducer = (state = initialState, action) => {
 
 }
 
-export default userReducer.js; 
+export default userReducer; 
