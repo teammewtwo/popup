@@ -8,7 +8,6 @@ import { showModal } from '../actions/actions';
 import SideBar from '../Components/DashboardSideBar/SideBar.jsx';
 import Events from '../Components/DashboardEvents/Events.jsx';
 import { CREATE_EVENT_MODAL } from '../constants/modaltypes'
-import  {getEvents} from '../actions/actions';
 import  {getEvents, getEventsAndDispatch} from '../actions/actions';
 
 const mapStateToProps = store => ({
@@ -23,7 +22,7 @@ const mapStateToProps = store => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  loadEvents: () => dispatch(getEventsAndDispatch),
+  loadEvents: () => dispatch(getEventsAndDispatch()),
   showModal: modelType => dispatch(showModal(modelType)),
 });
 

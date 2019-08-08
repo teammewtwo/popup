@@ -49,11 +49,6 @@ export const editEvent = (date, location, startTime, endTime, description, price
   payload: [date, location, startTime, endTime, description, maxAttendees, cuisineType, price, host],
 });
 
-export const getEvents = (events) => ({
-  type: types.GET_EVENTS,
-  payload: events,
-});
-
 export const logout = () => ({
   type: types.LOGOUT,
 });

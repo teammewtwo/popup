@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import DashboardContainer from './Containers/DashboardContainer.jsx'
+import LandingPageContainer from './Containers/LandingPageContainer.jsx'
+import ModalsRootContainer from './Containers/ModalsRootContainer.jsx'
 import { Route, Link } from 'react-router-dom'; // React Router Will use later
 import Home from './Components/Home.js';
 
@@ -10,7 +12,7 @@ class App extends Component {
 
       <LandingPageContainer cat={'man'}/>
       <DashboardContainer events={'fish'}/>
-      <ModalContainer cat={'dog'}/>
+      <ModalsRootContainer cat={'dog'}/>
 
     </div>
   );
