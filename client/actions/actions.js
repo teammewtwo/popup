@@ -95,6 +95,8 @@ export const login = (user) => {
   // type: types.LOGIN,
   // payload: [userName, pass],
 };
+
+
 export const getEvents = (events) => ({
   type: types.GET_EVENTS,
   payload: events,
@@ -107,8 +109,7 @@ export const getEventsAndDispatch = () => dispatch =>{
     return response.json();
   })
   .then(function(data){
-    //console.log('heRRo', data);
-    
+    console.log('heRRo', data);
     dispatch(getEvents(data)) 
   })
   .catch(er=>{

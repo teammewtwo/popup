@@ -8,7 +8,6 @@ import { showModal } from '../actions/actions';
 import { login } from '../actions/actions';
 /** Modal Type Constant */
 import { SIGN_UP_MODAL } from '../constants/modaltypes';
-import { LOGIN } from '../constants/actionTypes.js';
 
  class LandingPageContainer extends React.Component {
   constructor(props) {
