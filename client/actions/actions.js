@@ -1,9 +1,7 @@
 /* eslint-disable arrow-parens */
 /* eslint-disable import/prefer-default-export */
-import axios from 'axios';
 import { userInfo } from 'os';
 import * as types from '../constants/actionTypes.js';
-
 
 export const showModal = (modalType) => ({
   type: types.SHOW_MODAL,
@@ -51,9 +49,9 @@ export const editEvent = (date, location, startTime, endTime, description, price
   payload: [date, location, startTime, endTime, description, maxAttendees, cuisineType, price, host],
 });
 
-export const login = (userName, pass) => ({
-  type: types.LOGIN,
-  payload: [userName, pass],
+export const getEvents = (events) => ({
+  type: types.GET_EVENTS,
+  payload: events,
 });
 
 export const logout = () => ({
@@ -78,10 +76,50 @@ export const createNewUser = (userData) => {
   }));
 };
 
+
+export const login = (user) => {
+  console.log("Here is the username for the attempted login: ", user);
+  return (dispatch => fetch('auth/login', {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(response => {
+    console.log(response);
+    return response.json();
+  }).then(data =>{
+    console.log(data);
+  }).catch(error => {
+    console.log(error);
+  }));
+  // router.post('/login', userController.verifyUser, cookieController.setCookie, sessionController.createSession,
+  // (req, res) => res.status(200).json(res.locals.user));
+
+  //here is the old stuff that was in this function 
+  // type: types.LOGIN,
+  // payload: [userName, pass],
+};
 export const getEvents = (events) => ({
-  types: types.GET_EVENTS,
+  type: types.GET_EVENTS,
   payload: events,
 });
 
-export const signUpUser = () => dispatch => fetch('/api/')
-  .then(events => dispatch(getEvents(events)));
+export const getEventsAndDispatch = () => dispatch =>{ 
+  fetch('/api')
+  .then(function(response){
+   // console.log('response', response)
+    return response.json();
+  })
+  .then(function(data){
+    //console.log('heRRo', data);
+    
+    dispatch(getEvents(data)) 
+  })
+  .catch(er=>{
+    console.log('im in err')
+  })
+}
+
+
+

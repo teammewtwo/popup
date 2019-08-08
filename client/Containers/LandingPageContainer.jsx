@@ -4,13 +4,16 @@ import HeaderImage from '../Components/LandingPageCoverPhoto/HeaderImage.jsx';
 import LandingPageCardContainter from './LandingPageCardContainer.jsx';
 import { connect } from 'react-redux';
 /* Bring in Specific Actions */
-import { showModal } from '../actions/actions'
+import { showModal } from '../actions/actions';
+import { login } from '../actions/actions';
 /** Modal Type Constant */
 import { SIGN_UP_MODAL } from '../constants/modaltypes';
+import { LOGIN } from '../constants/actionTypes.js';
 
  class LandingPageContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.loginTheUser = this.loginTheUser.bind(this);
     this.showLoginMenu = this.showLoginMenu.bind(this);
   }
 
@@ -18,10 +21,21 @@ import { SIGN_UP_MODAL } from '../constants/modaltypes';
     this.props.showModal(SIGN_UP_MODAL);
   }
 
+  loginTheUser(username,password) { 
+    console.log("This was clicked!")
+    console.log(username);
+    console.log(password);
+    this.props.login(username,password);
+  }
+
+  showCreateEventBox() {
+    this.props.showModal(SIGN_UP_MODAL);
+  }
+
   render() {
     return (
       <div>
-      <NavBarContainer showLoginMenu={this.showLoginMenu}/>
+      <NavBarContainer loginTheUser={this.loginTheUser} showLoginMenu={this.showLoginMenu}/>
       <HeaderImage showCreateEventBox={this.showCreateEventBox}/>
       <LandingPageCardContainter />
     </div>
@@ -30,7 +44,8 @@ import { SIGN_UP_MODAL } from '../constants/modaltypes';
 }
 
 const mapDispatchToProps = dispatch => ({
-  showModal: modelType => dispatch(showModal(modelType))
+  showModal: modelType => dispatch(showModal(modelType)),
+  login: (username,password) => dispatch(login(username,password)), 
 });
 
 export default connect(null, mapDispatchToProps)(LandingPageContainer);

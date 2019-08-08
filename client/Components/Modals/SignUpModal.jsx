@@ -26,12 +26,19 @@ class SignUpModal extends React.Component {
     e.preventDefault();
     console.log('dsajflahfd', this.state)
     this.props.createNewUser(this.state);
+    this.submitted = this.submitted.bind(this);
+    
   }
 
   onClose() {
     this.props.hideModal();
   }
-
+  submitted(){
+    alert('hello')
+  }
+  passwordChanger(event){
+    //send event.target.value
+  }
   render() {
     return (
       <Modal onClose={this.onClose}>
