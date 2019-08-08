@@ -35,11 +35,13 @@ module.exports = {
     ],
   },
   devServer: {
-    publicPath: '/build',
+    //publicPath: '/build',
     proxy: [{
       context:['/api', '/auth'],
-      targets:'http://localhost:3000'  
+      target:'http://localhost:3000'  
     }],
-    hot: true,
+    // proxy: {
+    //   '/api': 'http://localhost:3000'
+    // }
   },
 };

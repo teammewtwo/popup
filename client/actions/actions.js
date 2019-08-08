@@ -2,7 +2,6 @@
 /* eslint-disable import/prefer-default-export */
 import * as types from '../constants/actionTypes.js'
 
-
 export const showModal = (modalType) => ({
   type: types.SHOW_MODAL,
   modalType,
@@ -52,6 +51,25 @@ export const createNewUser = (firstName, lastName, pass, email) => ({
 });
 
 export const getEvents = (events) => ({
-  types: types.GET_EVENTS,
+  type: types.GET_EVENTS,
   payload: events,
 });
+
+export const getEventsAndDispatch = () => dispatch =>{ 
+  fetch('/api')
+  .then(function(response){
+   // console.log('response', response)
+    return response.json();
+  })
+  .then(function(data){
+    //console.log('heRRo', data);
+    
+    dispatch(getEvents(data)) 
+  })
+  .catch(er=>{
+    console.log('im in err')
+  })
+}
+
+
+
