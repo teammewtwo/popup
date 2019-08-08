@@ -25,20 +25,9 @@ const mapDispatchToProps = dispatch => ({
 
 class DashboardContainer extends Component {
   componentDidMount() {
-    // async await requires core-js and regenerator runtime for the polyfill
-    // CURRENTLY NOT WORKING, TRY THE COMMENTED OUT DEFINITON OF GETEVENTSANDDISPATCH
-    // console.log('getting events....');
-    // const get = async () => {
-    //   await this.props.loadEvents();
-    //   console.log(this.props.events);
-    // };
-    // get();
+    
     console.log("im in compWillMount")
-    // async function get(){
-    //   await this.props.loadEvents();
-    // }
-   // get();
-
+    
     this.props.loadEvents()
   }
   
