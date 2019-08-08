@@ -1,8 +1,6 @@
 /* eslint-disable arrow-parens */
 /* eslint-disable import/prefer-default-export */
 import * as types from '../constants/actionTypes.js'
-import { userInfo } from 'os';
-
 
 export const showModal = (modalType) => ({
   type: types.SHOW_MODAL,
@@ -89,3 +87,26 @@ export const login = (user) => {
   // type: types.LOGIN,
   // payload: [userName, pass],
 };
+export const getEvents = (events) => ({
+  type: types.GET_EVENTS,
+  payload: events,
+});
+
+export const getEventsAndDispatch = () => dispatch =>{ 
+  fetch('/api')
+  .then(function(response){
+   // console.log('response', response)
+    return response.json();
+  })
+  .then(function(data){
+    //console.log('heRRo', data);
+    
+    dispatch(getEvents(data)) 
+  })
+  .catch(er=>{
+    console.log('im in err')
+  })
+}
+
+
+

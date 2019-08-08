@@ -8,9 +8,9 @@ class App extends Component {
   render() {
   return (
     <div id="app">
-      <LandingPageContainer />
-      <DashboardContainer />
-      <ModalContainer />
+      <LandingPageContainer cat={'man'}/>
+      <DashboardContainer events={'fish'}/>
+      <ModalContainer cat={'dog'}/>
     </div>
   );
 }
