@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from './Modal.jsx';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, Container,Col } from 'reactstrap';
 
 // see the modal container for information regarding how these props render thorugh the onclose method. 
 class SignUpModal extends React.Component {
