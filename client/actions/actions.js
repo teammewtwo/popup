@@ -49,10 +49,6 @@ export const editEvent = (date, location, startTime, endTime, description, price
   payload: [date, location, startTime, endTime, description, maxAttendees, cuisineType, price, host],
 });
 
-export const getEvents = (events) => ({
-  type: types.GET_EVENTS,
-  payload: events,
-});
 
 export const logout = () => ({
   type: types.LOGOUT,
@@ -70,7 +66,7 @@ export const createNewUser = (userData) => {
     console.log(response);
     return response.json();
   }).then(data => {
-    console.log(data);
+    dispatch(loginState());
   }).catch(error => {
     console.log(error);
   }));
@@ -89,7 +85,7 @@ export const login = (user) => {
     console.log(response);
     return response.json();
   }).then(data =>{
-    console.log(data);
+    console.log(dispatch(loginState()));
   }).catch(error => {
     console.log(error);
   }));
@@ -101,6 +97,15 @@ export const login = (user) => {
   // payload: [userName, pass],
 };
 
+export const loginState = () => ({
+  type: types.LOGIN_STATE,
+  // payload: 
+});
+
+export const getEvents = (events) => ({
+  type: types.GET_EVENTS,
+  payload: events,
+});
 
 export const getEventsAndDispatch = () => dispatch =>{ 
   fetch('/api')
@@ -109,8 +114,7 @@ export const getEventsAndDispatch = () => dispatch =>{
     return response.json();
   })
   .then(function(data){
-    //console.log('heRRo', data);
-    
+    console.log('heRRo', data);
     dispatch(getEvents(data)) 
   })
   .catch(er=>{

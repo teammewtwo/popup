@@ -17,6 +17,7 @@ export const EDIT_EVENT = 'EDIT_EVENT';
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const CREATE_NEW_USER = 'CREATE_NEW_USER';
+export const LOGIN_STATE = 'LOGIN_STATE';
 // end additional action types
 
 /**

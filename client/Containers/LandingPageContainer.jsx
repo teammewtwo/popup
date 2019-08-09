@@ -15,7 +15,8 @@ import { SIGN_UP_MODAL } from '../constants/modaltypes';
     super(props);
       this.showLoginMenu = this.showLoginMenu.bind(this);
       this.showCreateEventBox = this.showCreateEventBox.bind(this);
-    this.loginTheUser = this.loginTheUser.bind(this);
+      this.loginTheUser = this.loginTheUser.bind(this);
+ 
   }
 
   showLoginMenu() {
@@ -31,7 +32,9 @@ import { SIGN_UP_MODAL } from '../constants/modaltypes';
   }
 
   showCreateEventBox() {
+
     this.props.showModal(SIGN_UP_MODAL);
+
   }
 
   render() {
