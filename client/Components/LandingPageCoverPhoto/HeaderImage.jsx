@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 const HeaderImage = (props) => (
   <div className="headerimage tc">
     <img id='headerimage'src={image}></img>
-    <Button id='createevent' className="tc" onClick={props.showCreateEventBox} color="primary">Create an Event</Button>;
+    <Button id='createevent' className="tc" onClick={props.showCreateEventBox} color="primary">Create an Event</Button>
   </div> 
 )
 
