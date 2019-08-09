@@ -9,9 +9,8 @@ class App extends Component {
   return (
     <div id="app">
       <Home/>
-
       <DashboardContainer />
-   
+
     </div>
   );
 }
