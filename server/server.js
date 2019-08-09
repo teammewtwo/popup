@@ -5,6 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+//--------AWS Stuff--------
 
 const mongoUri = 'mongodb+srv://student:ilovetesting@cluster0-wpwug.mongodb.net/test';
 mongoose.connect(mongoUri, { dbName: 'popups', useNewUrlParser: true }, (err) => {
@@ -17,7 +18,7 @@ const app = express();
 // require routers
 const apiRouter = require('./routes/api');
 const authRouter = require('./routes/auth');
-
+const fileRoutes = require('./routes/file-upload')
 
 const PORT = 3000;
 
@@ -40,7 +41,7 @@ app.use(cookieParser());
  */
 app.use('/api', apiRouter);
 app.use('/auth', authRouter);
-
+app.use('/file-upload', fileRoutes); //maybe /api/v1  
 
 // respond with main app
 app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../index.html')));
@@ -57,7 +58,7 @@ app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 400,
-    message: { err: 'An error occurred' },
+    message: { err: 'An error occurred'+err },
   };
   const errorObj = Object.assign({}, defaultErr, err);
   console.log(errorObj.log);
