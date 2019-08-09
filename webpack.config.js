@@ -40,7 +40,7 @@ module.exports = {
     //   '/api': 'http://localhost:3000',
     // },
     proxy: [{
-      context: ['/api', '/auth', '/signup'],
+      context: ['/api', '/auth', '/signup', 'file-upload'],
       target: 'http://localhost:3000',
     }],
     hot: true,

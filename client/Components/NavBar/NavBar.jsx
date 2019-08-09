@@ -1,4 +1,4 @@
-import { Button } from 'reactstrap';
+import { Container, Col, Form, FormGroup, Label, Inpu, Button, } from 'reactstrap';
 
 import React, { Component } from 'react'
 
@@ -29,8 +29,8 @@ class NavBar extends Component {
       <div className="navbar">
         <Button id='Home' color="primary">Home</Button>{' '}
         <span>
-        <input onChange={this.changeInput} name='username' value= {this.state.username} type='text'  id='username' className='login'></input>
-        <input onChange={this.changeInput} name='password' value= {this.state.password} type='text' id='password' className='login'></input>
+        <input onChange={this.changeInput} placeholder="myemail@email.com" name='username' value= {this.state.username} type="email"  id='username' className='login'></input>
+        <input onChange={this.changeInput} placeholder="*******" name='password' value= {this.state.password} type="password" id='password' className='login'></input>
         <Button  type= 'submit' onClick={this.onSubmitLogin} id='login' color="primary">Log In</Button>{' '}
         <Button id='signup' onClick={this.props.showLoginMenu} color="primary">Sign Up</Button>{' '}
       </span>

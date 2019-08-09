@@ -65,7 +65,7 @@ export const createNewUser = (userData) => {
     console.log(response);
     return response.json();
   }).then(data => {
-    console.log(data);
+    dispatch(loginState());
   }).catch(error => {
     console.log(error);
   }));
@@ -84,7 +84,7 @@ export const login = (user) => {
     console.log(response);
     return response.json();
   }).then(data =>{
-    console.log(data);
+    console.log(dispatch(loginState()));
   }).catch(error => {
     console.log(error);
   }));
@@ -96,6 +96,10 @@ export const login = (user) => {
   // payload: [userName, pass],
 };
 
+export const loginState = () => ({
+  type: types.LOGIN_STATE,
+  // payload: 
+});
 
 export const getEvents = (events) => ({
   type: types.GET_EVENTS,
