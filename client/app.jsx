@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import LandingPageContainer from './Containers/LandingPageContainer.jsx'
 import ModalContainer from './Containers/ModalsRootContainer.jsx'
 import DashboardContainer from './Containers/DashboardContainer.jsx'
+import LandingPageContainer from './Containers/LandingPageContainer.jsx'
+import ModalsRootContainer from './Containers/ModalsRootContainer.jsx'
 import { Route, Link } from 'react-router-dom'; // React Router Will use later
 import Home from './Components/Home';
 import { connect } from 'react-redux';
@@ -16,6 +18,7 @@ class App extends Component {
   
   
   render() {
+
     if(this.props.users){
       return (
     
@@ -34,6 +37,3 @@ class App extends Component {
         </div>
       )
     }
-}
-}
-export default connect(mapStateToProps, null)(App);
