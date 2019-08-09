@@ -1,6 +1,7 @@
 import React from 'react';
 import image from '../../Assets/covorphoto.jpg';
 import { Button } from 'reactstrap';
+import 'tachyons';
 
 const HeaderImage = (props) => (
   <div className="headerimage tc">

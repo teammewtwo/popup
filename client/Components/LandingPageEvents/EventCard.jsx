@@ -29,6 +29,7 @@ const EventCard = (props) => {
 
         <CardImg top width="100%" src="http://picsum.photos/318/180?grayscale&random=2" alt="Card image cap" />
 
+
         <CardBody>
           <CardTitle>Card title</CardTitle>
           <CardSubtitle>host {props.host}</CardSubtitle>

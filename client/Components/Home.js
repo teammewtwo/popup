@@ -2,6 +2,7 @@ import React, { Component } from 'react';import LandingPageContainer from '../Co
 import ModalContainer from '../Containers/ModalsRootContainer.jsx';
 
  class Home extends Component {
+   
    render() { 
      return (
         <div className="home">

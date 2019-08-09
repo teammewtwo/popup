@@ -3,10 +3,14 @@ import LandingPageContainer from './Containers/LandingPageContainer.jsx'
 import ModalContainer from './Containers/ModalsRootContainer.jsx'
 import DashboardContainer from './Containers/DashboardContainer.jsx'
 import { Route, Link } from 'react-router-dom'; // React Router Will use later
-import Home from './Components/Home.js';
-import 'tachyons'
-// import PageContainer from './LandingPage/Wrappers/PageContainer.jsx'
-// import ModalContainer from './LandingPage/Wrappers/ModalsRootContainer.jsx'
+import Home from './Components/Home';
+import { connect } from 'react-redux';
+
+const mapStateToProps = store => ({
+  users: store.users.renderState,
+  loggedIn: store.users.loggedIn,
+});
+
 class App extends Component {
   constructor(props){
     super(props);
